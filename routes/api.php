@@ -10,3 +10,6 @@ Route::get('/user', function (Request $request) {
 
 //Ruta publica para el registro de usuarios
 Route::post('/register', [AuthController::class, 'register']);
+
+//Ruta publica para el ingreso de usuarios
+Route::post('/login', [AuthController::class, 'login']);
