@@ -15,11 +15,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // En este caso no use "User::factory(10)->create();" porque solamente quiero un usuario o yo mismo agregare manualmente
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Tavo',
+            'email' => 'tavo@gmail.com',
         ]);
+
+        /**
+         * Con respecto a product en esta ocasión quiere ver mis 4 productos creados en ProductSeeder
+         * El "Product::factory(10)->create();" sera para hacer pruebas en otra ocasión pero sirve para creador datos faker
+         */
+
+        $this->call([
+            ProductSeeder::class,
+        ]);
+        
+
     }
 }
