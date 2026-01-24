@@ -56,4 +56,20 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+
+    //Función para cerrar sesión de usuarios
+    public function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return response()->json([
+            'message' => 'Sesión cerrada correctamente'
+        ]);
+    }
+
+    //Función para ver el usuario encontrado
+    public function me(Request $request)
+    {
+        return response()->json($request->user());
+    }
 }
