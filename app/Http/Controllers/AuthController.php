@@ -33,7 +33,7 @@ class AuthController extends Controller
         ], 201);
     }
 
-    //Función para el ingreso de usuarios
+    //Función para el ingreso de usuarios (Pense que no iba a funcionar xD)
     public function login(Request $request)
     {
         $request->validate([
@@ -57,7 +57,7 @@ class AuthController extends Controller
         ]);
     }
 
-    //Función para cerrar sesión de usuarios
+    //Función para cerrar sesión de usuarios (Si funciona causa)
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
